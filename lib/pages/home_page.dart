@@ -56,11 +56,14 @@ class _HomePageState extends State<HomePage> {
             itemBuilder: (context, index) {
               final Song song = playlist[index];
 
-              return ListTile(
-                title: Text(song.songName),
-                subtitle: Text(song.artistName),
-                leading: Image.asset(song.albumArtImagePath),
-                onTap: () => goToSong(index),
+              return Padding(
+                padding: const EdgeInsets.symmetric(vertical: 7.0),
+                child: ListTile(
+                  title: Text(song.songName),
+                  subtitle: Text(song.artistName),
+                  leading: Image.asset(song.albumArtImagePath),
+                  onTap: () => goToSong(index),
+                ),
               );
             },
           );
